@@ -1,4 +1,4 @@
-from django.core.mail import send_mail
+# from django.core.mail import send_mail
 from django.shortcuts import render,redirect
 from .models import Contacts
 from django.contrib import messages
@@ -28,15 +28,15 @@ def contact(request):
 
         # send email
 
-        send_mail(
-            'Property listing enquiry',
-            'There has been an enquiry for' + listing +'login to admin panel for more',
-            'anshu06468@gmail.com',
-            ['anshukumar.kumar447@gmail.com',
-            realtor_email
-            ],
-            fail_silently=False,
-        )
+        # send_mail(
+        #     'Property listing enquiry',
+        #     'There has been an enquiry for' + listing +'login to admin panel for more',
+        #     'anshu06468@gmail.com',
+        #     ['anshukumar.kumar447@gmail.com',
+        #     realtor_email
+        #     ],
+        #     fail_silently=False,
+        # )
 
         messages.success(request,"Your request has been submitted, a realtor will get back to you soon")
         return redirect("/listings/"+listing_id)
