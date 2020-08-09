@@ -7,7 +7,6 @@ from .choices import state_choices,bedroom_choices,price_choices
 # Create your views here.
 def index(request):
     listings = Listings.objects.order_by("-list_date").filter(is_published=True)
-
     paginator=Paginator(listings,26)
     page = request.GET.get('page')
     paged_listings= paginator.get_page(page)
