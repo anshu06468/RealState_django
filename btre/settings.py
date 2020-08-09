@@ -151,3 +151,8 @@ MESSAGE_TAGS = {
 # EMAIL_HOST_PASSWORD='Passwordaug@123'
 # EMAIL_USE_TLS=True
 # EMAIL_USE_SSL=False
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
